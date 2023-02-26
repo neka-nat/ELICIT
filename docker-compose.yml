@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  dev:
+    image: elicit:latest
+    build: .
+    container_name: elicit-test
+    environment:
+      - "DISPLAY=${DISPLAY}"
+      - "NVIDIA_VISIBLE_DEVICES=all"
+      - "NVIDIA_DRIVER_CAPABILITIES=all"
+    volumes:
+      - ./:/work/elicit
+      - /dev:/dev
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+    tty: true
+    privileged: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - capabilities: [gpu]

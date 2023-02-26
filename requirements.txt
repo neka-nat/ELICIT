@@ -1,3 +1,5 @@
+torch==1.12.0
+torchvision==0.13.0
 numpy==1.21.5
 scipy==1.7.2
 opencv-python==4.6.0.66
@@ -18,4 +20,4 @@ trimesh==3.17.1
 scikit-image==0.19.3
 scikit-learn==1.0.2
 chumpy==0.70
-neural_renderer_pytorch
+git+https://github.com/neka-nat/neural_renderer.git
